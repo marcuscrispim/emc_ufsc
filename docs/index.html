@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Disciplinas de Engenharia Mecânica</title>
-    <link rel="stylesheet" href="static/styles.css">
-    <script type="module" src="static/scripts.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Engenharia Mecânica - Currículo Interativo</title>
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="static/styles.css" />
+  <!-- Script principal (que importa disciplinas.js) -->
+  <script type="module" src="static/scripts.js" defer></script>
 </head>
 <body>
-    <header>
-        <img src="static/image.png" alt="Logo">
-    </header>
-    <main>
-        <div id="legenda">
-            <p><span class="legend-item green"></span> Concluída</p>
-            <p><span class="legend-item blue"></span> Pode Fazer</p>
-            <p><span class="legend-item red"></span> Não Pode Fazer</p>
-        </div>
-        <div id="disciplinas-container"></div>
-    </main>
+  <header>
+    <div class="header-left">
+      <img src="static/image.png" alt="Logo Principal" />
+    </div>
+    <div class="header-center">
+      <h1>Engenharia Mecânica</h1>
+      <h2>Currículo Interativo</h2>
+    </div>
+    <div class="header-right">
+      <img src="static/ufsclogo.png" alt="Logo UFSC" />
+    </div>
+  </header>
+  
+  <main>
+    <!-- Legenda exibida em texto colorido -->
+    <div id="legenda">
+      <p><span class="legenda-concluida">Concluída</span></p>
+      <p><span class="legenda-pode-fazer">Pode Fazer</span></p>
+      <p><span class="legenda-nao-pode-fazer">Não Pode Fazer</span></p>
+    </div>
+    <div id="disciplinas-container"></div>
+  </main>
 </body>
 </html>

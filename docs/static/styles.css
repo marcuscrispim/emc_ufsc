@@ -1,105 +1,185 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
+/* 
+ * 1. Importando as fontes conforme manual:
+ *    Rajdhani (títulos) e Open Sans (corpo)
+ */
+ @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Rajdhani:wght@400;600;700&display=swap');
 
-header {
-    background-color: #0057b7;
-    padding: 20px;
-    text-align: center;
-    border-bottom: 1px solid #ccc;
-}
-
-header img {
-    max-width: 150px;
-}
-
-#legenda {
+ /* Paleta (do manual):
+    #1B3066 (azul-escuro), #2F457D (azul-médio), #EAB630 (amarelo), #333333 (cinza-escuro), #FFF (branco)
+ */
+ 
+ /* 2. BODY (fundo branco, texto #333, Open Sans) */
+ body {
+   margin: 0;
+   padding: 0;
+   background-color: #FFFFFF;
+   color: #333333;
+   font-family: 'Open Sans', sans-serif;
+ }
+ 
+ /* 3. HEADER: usando flex para alinhar logo-esquerda / título-centro / logo-direita */
+ header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background: linear-gradient(90deg, #1B3066 0%, #2F457D 100%);
+   padding: 10px 20px; 
+   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+ }
+ 
+ .header-left, .header-center, .header-right {
+   display: flex;
+   align-items: center;
+ }
+ 
+ .header-left img {
+   max-width: 120px;
+ }
+ 
+ .header-right img {
+   max-width: 80px;
+ }
+ 
+ /* Centraliza título e subtítulo */
+ .header-center {
+   flex-direction: column;
+   text-align: center;
+   color: #FFFFFF;
+ }
+ 
+ .header-center h1 {
+   font-family: 'Rajdhani', sans-serif;
+   font-size: 1.8rem;
+   margin: 0;
+ }
+ 
+ .header-center h2 {
+   font-family: 'Rajdhani', sans-serif;
+   font-size: 1.2rem;
+   margin: 4px 0 0 0;
+ }
+ 
+ /* 4. Legenda (texto colorido, sem quadrados) */
+ #legenda {
     display: flex;
     justify-content: center;
+    gap: 25px;
     margin: 20px 0;
-}
+  }
+  
+  .legenda-concluida {
+    color: #2E7D32; /* verde */
+    font-weight: bold;
+  }
+  .legenda-pode-fazer {
+    color: #1565C0; /* azul */
+    font-weight: bold;
+  }
+  .legenda-nao-pode-fazer {
+    color: #FBC02D; /* amarelo */
+    font-weight: bold;
+  }
+  
+  /* ... Estilos das disciplinas ... */
+  
+  /* Disciplina concluída → verde */
+  .disciplina.concluida {
+    background-color: #2E7D32; /* verde */
+    color: #FFFFFF;           /* texto branco para bom contraste */
+  }
+  
+  /* Disciplina pode-fazer → azul */
+  .disciplina.pode-fazer {
+    background-color: #1565C0; /* azul */
+    color: #FFFFFF;            /* texto branco para bom contraste */
+  }
+  
+  /* Disciplina não-pode-fazer → amarelo */
+  .disciplina.nao-pode-fazer {
+    background-color: #FBC02D; /* amarelo */
+    color: #333333;            /* texto escuro para legibilidade */
+  }
+ 
+ /* 5. Container das disciplinas */
+ #disciplinas-container {
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   padding: 0 20px;
+ }
+ 
+ /* 6. Cartão do semestre */
+ .semestre {
+   display: flex;
+   flex-direction: column;
+   margin: 20px;
+   background-color: #fff;
+   border: 1px solid #ccc;
+   border-radius: 10px;
+   padding: 20px;
+   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+   width: 280px;
+   /* width para padronizar cada “cartão” */
+ }
+ 
+ .semestre h3 {
+   margin-top: 0;
+   margin-bottom: 0.5rem;
+   text-align: center;
+   font-family: 'Rajdhani', sans-serif; 
+   color: #1B3066;
+   font-weight: 600;
+ }
+ 
+ /* 7. Container das checkboxes de fase */
+ .fase-checklist {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 8px;
+   margin-bottom: 10px;
+   justify-content: center;
+ }
+ 
+ .fase-checklist label {
+   display: flex;
+   align-items: center;
+   gap: 4px;
+   font-size: 0.9rem;
+   cursor: pointer;
+ }
+ 
+ /* 8. Disciplinas (cartão) + hover + status (concluída/pode-fazer/não-pode-fazer) */
+ .disciplina {
+   position: relative;
+   padding: 15px;
+   margin: 8px 0;
+   background-color: #e0e0e0;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+ }
+ 
+ .disciplina:hover {
+   background-color: #d4d4d4;
+   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+   transform: scale(1.01);
+ }
+ 
+ /* -- Cores dos estados -- */
+ .disciplina.pode-fazer {
+  background-color: #1B3066; /* Azul-escuro */
+   color: #FFFFFF;
+ }
+ 
+ .disciplina.nao-pode-fazer {
+  background-color: #EAB630; /* Amarelo */
+   color: #333333;
+ }
+ 
 
-.legend-item {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-}
-
-.green {
-    background-color: green;
-}
-
-.blue {
-    background-color: blue;
-}
-
-.red {
-    background-color: red;
-}
-
-#disciplinas-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 0 20px;
-}
-
-.semestre {
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.semestre h3 {
-    margin-top: 0;
-    text-align: center;
-    color: #0057b7;
-}
-
-.semestre button {
-    background-color: #0057b7;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-.semestre button:hover {
-    background-color: #003f88;
-}
-
-.disciplina {
-    padding: 20px;
-    margin: 5px 0;
-    background-color: #e0e0e0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
+ /* Concluída (verde) */
 .disciplina.concluida {
-    background-color: green;
-    color: #fff;
-}
-
-.disciplina.pode-fazer {
-    background-color: blue;
-    color: #fff;
-}
-
-.disciplina.nao-pode-fazer {
-    background-color: red;
-    color: #fff;
+  background-color: green; /* pode usar #2E7D32 ou outro tom de verde */
+  color: #fff;
 }
