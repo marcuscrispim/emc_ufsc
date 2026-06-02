@@ -1,0 +1,62 @@
+[
+  [
+    {"nome": "EGR5213", "preRequisitos": []},
+    {"nome": "EMC5004", "preRequisitos": []},
+    {"nome": "EQA5116", "preRequisitos": []},
+    {"nome": "FSC5101", "preRequisitos": []},
+    {"nome": "INE5201", "preRequisitos": []},
+    {"nome": "MTM3110", "preRequisitos": []}
+  ],
+  [
+    {"nome": "EGR5214", "preRequisitos": ["EGR5213"]},
+    {"nome": "EMC5132", "preRequisitos": ["FSC5101", "MTM3110"]},
+    {"nome": "FSC5002", "preRequisitos": ["FSC5101", "MTM3110"]},
+    {"nome": "FSC5122", "preRequisitos": []},
+    {"nome": "MTM3120", "preRequisitos": ["MTM3110"]},
+    {"nome": "MTM3121", "preRequisitos": []}
+  ],
+  [
+    {"nome": "EMC5128", "preRequisitos": ["EMC5132", "MTM3121"]},
+    {"nome": "EMC5201", "preRequisitos": ["EQA5116"]},
+    {"nome": "EMC5223", "preRequisitos": ["MTM3110"]},
+    {"nome": "EMC5405", "preRequisitos": ["FSC5002", "MTM3120"]},
+    {"nome": "INE5202", "preRequisitos": ["INE5201"]},
+    {"nome": "MTM3103", "preRequisitos": ["MTM3120"]},
+    {"nome": "MTM3131", "preRequisitos": ["MTM3120", "MTM3121"]}
+  ],
+  [
+    {"nome": "EMC5138", "preRequisitos": ["EMC5128"]},
+    {"nome": "EMC5302", "preRequisitos": ["EGR5214", "EMC5004"]},
+    {"nome": "EMC5361", "preRequisitos": ["FSC5101", "MTM3120"]},
+    {"nome": "EMC5407", "preRequisitos": ["EMC5405", "EMC5132"]},
+    {"nome": "EMC5418", "preRequisitos": ["EMC5405"]},
+    {"nome": "MTM3104", "preRequisitos": ["MTM3131"]}
+  ],
+  [
+    {"nome": "EMC5110", "preRequisitos": ["EMC5138", "EMC5201"]},
+    {"nome": "EMC5123", "preRequisitos": ["EMC5361"]},
+    {"nome": "EMC5202", "preRequisitos": ["EMC5201"]},
+    {"nome": "EMC5203", "preRequisitos": ["EMC5201", "EMC5223"]},
+    {"nome": "EMC5410", "preRequisitos": ["EMC5405"]},
+    {"nome": "EMC5417", "preRequisitos": ["EMC5405", "INE5201"]},
+    {"nome": "EMC5419", "preRequisitos": ["EMC5407", "MTM3104"]},
+    {"nome": "FSC5113", "preRequisitos": ["MTM3110"]}
+  ],
+  [
+    {"nome": "EEL5113", "preRequisitos": ["FSC5113"]},
+    {"nome": "EMC5005", "preRequisitos": ["EMC5232", "INE5202"]},
+    {"nome": "EMC5210", "preRequisitos": ["EMC5202", "EMC5203", "EMC5223", "EMC5302"]},
+    {"nome": "EMC5335", "preRequisitos": ["EMC5123", "EMC5138"]},
+    {"nome": "EMC5336", "preRequisitos": ["MTM3104"]},
+    {"nome": "EMC5404", "preRequisitos": ["EMC5407", "EMC5417"]},
+    {"nome": "EMC5443", "preRequisitos": ["EMC5407"]}
+  ],
+  [
+    {"nome": "EMC5003", "preRequisitos": []},
+    {"nome": "EMC5006", "preRequisitos": ["EEL5113"]},
+    {"nome": "EMC5140", "preRequisitos": ["EMC5138", "EMC5361", "MTM3104"]},
+    {"nome": "EMC5204", "preRequisitos": ["EEL5113", "EMC5201"]},
+    {"nome": "ENS5146", "preRequisitos": []},
+    {"nome": "EPS5229", "preRequisitos": []}
+  ]
+]
